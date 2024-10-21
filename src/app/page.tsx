@@ -11,7 +11,7 @@ export default function HomePage() {
       <section className='mb-12 flex flex-col md:flex-row gap-8'>
         <div className='md:w-1/2'>
           <h2 className='text-3xl font-bold mb-4'>
-            Welkom bij Dieteren Bouw Service
+            Welkom bij Dieteren Bouwservice
           </h2>
           <p className='mb-4'>
             Dieteren bouw is een klein ervaren bouwbedrijf dat zich bezig houdt
