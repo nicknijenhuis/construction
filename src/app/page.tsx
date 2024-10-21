@@ -1,70 +1,90 @@
 'use client';
 
-import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import '@/lib/env';
 
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Logo from '~/svg/Logo.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
-
 export default function HomePage() {
   return (
-    <main>
-      <Head>
-        <title>Hi</title>
-      </Head>
-      <section className='bg-white'>
-        <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-          <Logo className='w-16' />
-          <h1 className='mt-4'>Next.js + Tailwind CSS + TypeScript Starter</h1>
-          <p className='mt-2 text-sm text-gray-800'>
-            A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-            Import, Seo, Link component, pre-configured with Husky{' '}
+    <main className='max-w-4xl mx-auto'>
+      <section className='mb-12 flex flex-col md:flex-row gap-8'>
+        <div className='md:w-1/2'>
+          <h2 className='text-3xl font-bold mb-4'>
+            Welkom bij Dieteren Bouw Service
+          </h2>
+          <p className='mb-4'>
+            Dieteren bouw is een klein ervaren bouwbedrijf dat zich bezig houdt
+            met nieuwbouw, verbouw, aanbouw en renovatie. Wij werken grotendeels
+            voor particulieren maar ook voor woningbouwverenigingen.
           </p>
-          <p className='mt-2 text-sm text-gray-700'>
-            <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-              See the repository
-            </ArrowLink>
+          <p className='mb-4'>
+            Wij zijn vooral gespecialiseerd in nieuwbouw, waar we in de meeste
+            gevallen in overleg de ruwbouw maken, dit betekent de bouw vanaf de
+            fundering tot het dak. Dit is gunstig voor u, omdat u dan de afbouw
+            zelf kan regelen waarmee u geld bespaart. Uiteraard kunnen we ook de
+            gehele bouw voor u realiseren.
           </p>
-
-          <ButtonLink className='mt-6' href='/components' variant='light'>
-            See all components
-          </ButtonLink>
-
-          <UnstyledLink
-            href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-            className='mt-4'
+          <Link
+            href='/over-ons'
+            className='inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors'
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              width='92'
-              height='32'
-              src='https://vercel.com/button'
-              alt='Deploy with Vercel'
-            />
-          </UnstyledLink>
+            Lees meer
+          </Link>
+        </div>
+        <div className='md:w-1/2 mt-4 md:mt-0'>
+          <Image
+            src='/images/home.jpg'
+            alt='Dieteren Bouw Home'
+            width={500}
+            height={300}
+            className='rounded-lg shadow-md object-cover w-full h-auto'
+          />
+        </div>
+      </section>
 
-          <footer className='absolute bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-              Theodorus Clarence
-            </UnderlineLink>
-          </footer>
+      <section className='bg-gray-100 p-6 rounded-lg'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-6'>
+          <div>
+            <h4 className='text-lg font-medium mb-2'>Eijsden</h4>
+            <Image
+              src='/images/Eijsden.jpg'
+              alt='Bouwproject in Eijsden'
+              width={300}
+              height={200}
+              className='w-full h-48 object-cover rounded'
+            />
+          </div>
+          <div>
+            <h4 className='text-lg font-medium mb-2'>Kerkstraat Brunssum</h4>
+            <Image
+              src='/images/Kerkstraat.jpg'
+              alt='Bouwproject aan Kerkstraat in Brunssum'
+              width={300}
+              height={200}
+              className='w-full h-48 object-cover rounded'
+            />
+          </div>
+          <div>
+            <h4 className='text-lg font-medium mb-2'>Eijsden</h4>
+            <Image
+              src='/images/Eijsden2.jpg'
+              alt='Tweede bouwproject in Eijsden'
+              width={300}
+              height={200}
+              className='w-full h-48 object-cover rounded'
+            />
+          </div>
+          <div>
+            <h4 className='text-lg font-medium mb-2'>Heijenrath</h4>
+            <Image
+              src='/images/Heijenrath.jpg'
+              alt='Bouwproject in Heijenrath'
+              width={300}
+              height={200}
+              className='w-full h-48 object-cover rounded'
+            />
+          </div>
         </div>
       </section>
     </main>

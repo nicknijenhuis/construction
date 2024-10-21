@@ -1,14 +1,15 @@
 import { Metadata } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
+
+import UnderlineLink from '@/components/links/UnderlineLink';
 
 import { siteConfig } from '@/constant/config';
 
-// !STARTERCONF Change these default meta
-// !STARTERCONF Look at @/constant/config to change them
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -17,11 +18,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
-  // !STARTERCONF this is the default favicon, you can generate your own from https://realfavicongenerator.net/
-  // ! copy to /favicon folder
   icons: {
     icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon-16x16.png',
+    shortcut: '/favicon/favicon-48-48.png',
     apple: '/favicon/apple-touch-icon.png',
   },
   manifest: `/favicon/site.webmanifest`,
@@ -39,14 +38,13 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@th_clarence',
   },
-  // authors: [
-  //   {
-  //     name: 'Theodorus Clarence',
-  //     url: 'https://theodorusclarence.com',
-  //   },
-  // ],
+  authors: [
+    {
+      name: 'Nick Nijenhuis',
+      url: 'https://www.novana.nl',
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -56,7 +54,75 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <Head>
+        <title>Dieteren Bouwservice</title>
+      </Head>
+      <body className='flex flex-col min-h-screen'>
+        <header className='bg-blue-600 text-white py-6 px-4 shadow-md'>
+          <div className='container mx-auto flex flex-col items-center md:flex-row md:justify-between'>
+            <div className='flex items-center mb-4 md:mb-0'>
+              <Image
+                src='/svg/Logo.svg'
+                alt='Dieteren Bouwservice'
+                width={80}
+                height={80}
+                className='bg-white rounded-full p-2'
+              />
+              <div className='ml-4'>
+                <h1 className='text-2xl font-bold'>Dieteren Bouwservice</h1>
+                <p className='text-sm text-blue-100'>
+                  Nieuwbouw, Aanbouw, Verbouwen & Renovatie
+                </p>
+              </div>
+            </div>
+            <nav className='mt-4 md:mt-0'>
+              <ul className='flex flex-wrap justify-center space-x-6'>
+                <li>
+                  <Link href='/' className='hover:underline text-lg'>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/over-ons' className='hover:underline text-lg'>
+                    Over ons
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/fotos' className='hover:underline text-lg'>
+                    Foto's
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/contact' className='hover:underline text-lg'>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+
+        <main className='flex-grow container mx-auto mt-8 px-4 mb-12'>
+          {children}
+        </main>
+
+        <footer className='bg-gray-800 text-white py-6 mt-auto'>
+          <div className='container mx-auto text-center'>
+            <div className='flex justify-between items-center'>
+              <div>© {new Date().getFullYear()} Dieteren Bouw Service</div>
+              <div>
+                Made by{' '}
+                <UnderlineLink
+                  href='https://novana.nl'
+                  className='text-blue-300 hover:text-blue-100'
+                >
+                  Novana
+                </UnderlineLink>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
