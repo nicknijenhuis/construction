@@ -5,7 +5,7 @@ import ContactWidget from '@/components/ContactWidget';
 
 export default function AboutUs() {
   return (
-    <main className='max-w-6xl mx-auto px-4 py-8'>
+    <main className='max-w-6xl mx-auto px-4 py-4'>
       <div className='flex flex-col md:flex-row gap-8'>
         <div className='md:w-2/3'>
           <h1 className='text-3xl font-bold mb-6'>Over ons</h1>

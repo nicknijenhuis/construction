@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <main>
       <section className='bg-white'>
-        <div className='layout relative py-12'>
+        <div className='layout relative py-2'>
           <ContactWidget />
         </div>
       </section>

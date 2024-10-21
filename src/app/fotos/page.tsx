@@ -17,7 +17,7 @@ export default function PhotosPage() {
   ];
 
   return (
-    <main className='max-w-6xl mx-auto px-4 py-8'>
+    <main className='max-w-6xl mx-auto px-4 py-4'>
       <h1 className='text-3xl font-bold mb-6'>Foto's</h1>
       <div className='flex flex-col md:flex-row gap-8'>
         <div className='md:w-3/4'>
