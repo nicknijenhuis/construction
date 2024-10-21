@@ -56,7 +56,7 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <h4 className='text-lg font-medium mb-2'>Kerkstraat Brunssum</h4>
+            <h4 className='text-lg font-medium mb-2'>Brunssum</h4>
             <Image
               src='/images/Kerkstraat.jpg'
               alt='Bouwproject aan Kerkstraat in Brunssum'
