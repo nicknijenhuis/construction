@@ -61,13 +61,17 @@ export default function RootLayout({
         <header className='bg-blue-600 text-white py-6 px-4 shadow-md'>
           <div className='container mx-auto flex flex-col items-center md:flex-row md:justify-between'>
             <div className='flex items-center mb-4 md:mb-0'>
-              <Image
-                src='/svg/Logo.svg'
-                alt='Dieteren Bouwservice'
-                width={80}
-                height={80}
-                className='bg-white rounded-full p-2'
-              />
+              <div
+                className='bg-white rounded-full p-2 flex items-center justify-center'
+                style={{ width: 84, height: 84 }}
+              >
+                <Image
+                  src='/svg/Logo.svg'
+                  alt='Dieteren Bouwservice'
+                  width={76}
+                  height={76}
+                />
+              </div>
               <div className='ml-4'>
                 <h1 className='text-2xl font-bold'>Dieteren Bouwservice</h1>
                 <p className='text-sm text-blue-100'>
