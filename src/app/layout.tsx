@@ -113,8 +113,10 @@ export default function RootLayout({
         <footer className='bg-gray-800 text-white py-6 mt-auto'>
           <div className='container mx-auto text-center'>
             <div className='flex justify-between items-center'>
-              <div>© {new Date().getFullYear()} Dieteren Bouw Service</div>
-              <div>
+              <div className='pl-2'>
+                © {new Date().getFullYear()} Dieteren Bouw Service
+              </div>
+              <div className='pr-2'>
                 Made by{' '}
                 <UnderlineLink
                   href='https://novana.nl'
